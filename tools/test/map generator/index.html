@@ -1,0 +1,291 @@
+﻿<body>
+<div id='maps'></div>
+<button onclick='on1()'>сгенерировать</button>
+<canvas id='main' class='main'></canvas>
+</body>
+<script>
+
+var tilesetImage = new Image();
+tilesetImage.src = 'map.png';
+
+
+var map=[];
+/*Xmin,Xmax,Ymin,Ymax, x2, y2*/
+var id_map=[
+
+
+
+
+[1,[0, 20, 0, 20, 0, 0],[0, 30, 20, 30, 0, 1],[20, 30, 0, 20, 1, 0]],
+[2,[0, 20, 0, 30, 0, 1],[20, 30, 0, 30, 0, 1]],
+[3,[0, 30, 0, 10, 0, 0],[0, 10, 10, 30, 0, 1],[10, 20, 10, 30, 0, 1],[20, 30, 10, 30, 1, 1]],
+
+];
+
+
+
+function play(){
+maps.innerHTML='';
+for(i1=0;map.length>i1;i1++){
+for(i2=0;map[0].length>i2;i2++){
+if(map[i1][i2]==0) 
+maps.innerHTML+='░░';
+else 
+maps.innerHTML+='██';
+}
+maps.innerHTML+='<br>';
+}
+generate0();
+}
+
+
+function generate0(){
+for(i1=0;map.length>i1;i1++){
+for(i2=0;map[0].length>i2;i2++){
+if(map[i1][i2]==1){
+a1=a2=a3=a4=a5=a6=a7=a8=true;
+
+if((i1==0)&&(i2==0)){
+a1=a2=a3=a4=a6=false;
+if(map[i1][i2+1]!=0)a5=false;
+if(map[i1+1][i2]!=0)a7=false;
+if(map[i1+1][i2+1]!=0)a8=false;
+}else if((i1==0)&&(i2==map[0].length-1)){
+a1=a2=a3=a5=a8=false;
+if(map[i1][i2-1]!=0)a4=false;
+if(map[i1+1][i2-1]!=0)a6=false;
+if(map[i1+1][i2]!=0)a7=false;
+}else if((i1==map.length-1)&&(i2==0)){
+a1=a4=a6=a7=a8=false;
+if(map[i1-1][i2]!=0)a2=false;
+if(map[i1-1][i2+1]!=0)a3=false;
+if(map[i1][i2+1]!=0)a5=false;
+}else if((i1==map.length-1)&&(i2==map[0].length-1)){
+a3=a5=a6=a7=a8=false;
+if(map[i1-1][i2-1]!=0)a1=false;
+if(map[i1-1][i2]!=0)a2=false;
+if(map[i1][i2-1]!=0)a4=false;
+}else if(i1==0){
+a1=a2=a3=false;
+if(map[i1][i2-1]!=0)a4=false;
+if(map[i1][i2+1]!=0)a5=false;
+if(map[i1+1][i2-1]!=0)a6=false;
+if(map[i1+1][i2]!=0)a7=false;
+if(map[i1+1][i2+1]!=0)a8=false;
+}else if(i2==0){
+a1=a4=a6=false;
+if(map[i1-1][i2]!=0)a2=false;
+if(map[i1-1][i2+1]!=0)a3=false;
+if(map[i1][i2+1]!=0)a5=false;
+if(map[i1+1][i2]!=0)a7=false;
+if(map[i1+1][i2+1]!=0)a8=false;
+}else if(i1==map.length-1){
+a6=a7=a8=false;
+if(map[i1-1][i2-1]!=0)a1=false;
+if(map[i1-1][i2]!=0)a2=false;
+if(map[i1-1][i2+1]!=0)a3=false;
+if(map[i1][i2-1]!=0)a4=false;
+if(map[i1][i2+1]!=0)a5=false;
+}else if(i2==map[0].length-1){
+a3=a5=a8=false;
+if(map[i1-1][i2-1]!=0)a1=false;
+if(map[i1-1][i2]!=0)a2=false;
+if(map[i1][i2-1]!=0)a4=false;
+if(map[i1+1][i2-1]!=0)a6=false;
+if(map[i1+1][i2]!=0)a7=false;
+}else if((i1!=0)&&(i2!=0)&&(i1!=map.length-1)){
+if(map[i1-1][i2-1]!=0)a1=false;
+if(map[i1-1][i2]!=0)a2=false;
+if(map[i1-1][i2+1]!=0)a3=false;
+if(map[i1][i2-1]!=0)a4=false;
+if(map[i1][i2+1]!=0)a5=false;
+if(map[i1+1][i2-1]!=0)a6=false;
+if(map[i1+1][i2]!=0)a7=false;
+if(map[i1+1][i2+1]!=0)a8=false;
+}
+
+generate1(a1, a2, a3, a4, a5, a6, a7, a8, i1, i2);
+
+
+
+
+}}}
+generate2();
+}
+
+
+function generate1(a1, a2, a3, a4, a5, a6, a7, a8, i1, i2){
+if((a1==false)&&(a2==false)&&(a3==false)&&(a4==false)&&(a5==false)&&(a6==false)&&(a7==false)&&(a8==false))map[i1][i2]=134
+else
+if((a1==false)&&(a2==false)&&(a3==false)&&(a4==false)&&(a5==false)&&(a6==false)&&(a7==false))map[i1][i2]=210
+else
+if((a1==false)&&(a2==false)&&(a3==false)&&(a4==false)&&(a5==false)&&(a7==false)&&(a8==false))map[i1][i2]=209
+else
+if((a1==false)&&(a2==false)&&(a4==false)&&(a5==false)&&(a6==false)&&(a7==false)&&(a8==false))map[i1][i2]=195
+else
+if((a2==false)&&(a3==false)&&(a4==false)&&(a5==false)&&(a6==false)&&(a7==false)&&(a8==false))map[i1][i2]=194
+else
+if((a4==false)&&(a5==false)&&(a6==false)&&(a7==false)&&(a8==false))map[i1][i2]=119
+else
+if((a1==false)&&(a2==false)&&(a3==false)&&(a4==false)&&(a5==false))map[i1][i2]=149
+else
+if((a1==false)&&(a2==false)&&(a4==false)&&(a6==false)&&(a7==false))map[i1][i2]=135
+else
+if((a2==false)&&(a3==false)&&(a5==false)&&(a7==false)&&(a8==false))map[i1][i2]=133
+else
+if((a5==false)&&(a7==false)&&(a8==false))map[i1][i2]=118
+else
+if((a4==false)&&(a6==false)&&(a7==false))map[i1][i2]=120
+else
+if((a2==false)&&(a3==false)&&(a5==false))map[i1][i2]=148
+else
+if((a1==false)&&(a2==false)&&(a4==false))map[i1][i2]=150
+
+
+}
+
+
+
+
+
+
+
+function generate2(){
+for(i1=0;map.length>i1;i1++){
+for(i2=0;map[0].length>i2;i2++){
+if(map[i1][i2]!=0)map[i1][i2]--;
+}}
+generate3();
+}
+
+
+
+function generate3(){
+
+
+
+
+
+var canvas = document.getElementById('main');
+var ctx = canvas.getContext('2d');
+
+var tileSize = 26*1;/* Размер плитки (26*26)*/
+
+canvas.height = map.length*tileSize;
+canvas.width  = map[0].length*tileSize;
+
+var rowTileCount = map.length;/* Количество плиток в каждом ряду фона*/
+var colTileCount = map[0].length;/* Количество плиток в каждом столбце фона*/
+var imageNumTiles = 15;  /* Количество плиток в каждом ряду тайлсета*/
+
+
+ for (var r = 0; r < rowTileCount; r++) {for (var c = 0; c < colTileCount; c++) {
+var tile = map[ r ][ c ];
+var tileRow = (tile / imageNumTiles) | 0; // Операция "побитовое ИЛИ"
+var tileCol = (tile % imageNumTiles) | 0;
+ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize);
+
+}}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function on1(){
+for(i1=0;30>i1;i1++){
+map[i1]=[];
+for(i2=0;30>i2;i2++){
+map[i1][i2]=1;
+}}
+
+var r=Math.floor(Math.random()*3);
+
+
+for(i=1;i<id_map[r].length;i++){
+var Xmin=id_map[r][i][0];
+var Xmax=id_map[r][i][1];
+var Ymin=id_map[r][i][2];
+var Ymax=id_map[r][i][3];
+
+var x=Xmax-Xmin;
+var y=Ymax-Ymin;
+
+
+var x1=Math.floor(Math.random()*(x-5))+3;
+var y1=Math.floor(Math.random()*(y-5))+3;
+
+var x2=id_map[r][i][4];
+var y2=id_map[r][i][5];
+
+if(x2==1)x2=(Xmax-1-x1); else x2=(Xmin+1);
+if(y2==1)y2=(Ymax-1-y1); else y2=(Ymin+1);
+
+for(i1=0;i1<x1;i1++){
+for(i2=0;i2<y1;i2++){
+map[i1+x2][i2+y2]=0;
+}}
+
+}
+
+on2(id_map[r][0]);
+
+
+play();
+}
+
+
+function on2(a){
+
+if(a==1){
+map[26][0]=0;
+for(i=4;i<26;i++){map[i][3]=0;}
+for(i=4;i<26;i++){map[3][i]=0;}
+map[3][29]=0;
+}
+
+if(a==2){
+for(i=0;i<26;i++){map[23][i]=0;}
+for(i=4;i<24;i++){map[i][26]=0;}
+map[3][29]=0;
+}
+
+if(a==3){
+map[3][0]=0;
+for(i=4;i<26;i++){map[3][i]=0;}
+for(i=4;i<26;i++){map[i][26]=0;}
+map[26][29]=0;
+}
+
+
+
+
+
+
+
+
+
+}
+
+</script>

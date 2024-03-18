@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>assassin in dungeon</title>
+<link rel='icon' type="image/x-icon" href='img/icon.png'>
+</head>
+<style>
+body {
+	cursor: url('img/icon.png'), auto;
+}
+.hp{position:absolute;
+top:0;left:0;}
+.lvl{position:absolute;
+top:0;left:120;}
+.gold{position:absolute;
+top:30;left:0;}
+.def{position:absolute;
+top:30;left:120;}
+.menus{position:absolute;
+top:0;left:240;}
+.hp1{position:absolute;
+top:10;left:35;}
+.lvl1{position:absolute;
+top:10;left:155;}
+.gold1{position:absolute;
+top:40;left:35;}
+.def1{position:absolute;
+top:40;left:155;}
+.main{position:absolute;
+top:60;left:0;}
+
+.shop{
+border: solid 2px black;
+top:60px;
+background:while;
+width:250px;
+height:210px;
+}
+.shopbtn1{position:absolute;
+font-size:32px;
+color:fff;
+background:blue;
+width:150px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:20px;left:80px;}
+.shopbtn1:hover{background:red;}
+.shop1{position:absolute;top:10px;left:10px;}
+.shopbtn2{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:150px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:90px;left:80px;}
+.shopbtn2:hover{background:red;}
+.shop2{position:absolute;top:80px;left:10px;}
+.shopbtn3{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:160px;left:30px;}
+.shopbtn3:hover{background:red;}
+
+.menu{
+border: solid 2px black;
+top:60px;
+background:while;
+width:250px;
+height:280px;
+}
+.menubtn1{position:absolute;
+font-size:32px;
+color:fff;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:20px;left:30px;}
+.menubtn1:hover{background:red;}
+.menubtn2{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:90px;left:30px;}
+.menubtn2:hover{background:red;}
+.menubtn3{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:160px;left:30px;}
+.menubtn3:hover{background:red;}
+.menubtn4{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:230px;left:30px;}
+.menubtn4:hover{background:red;}
+.console{
+position:absolute;
+width:5%;
+height:5%;
+left:95%;
+top:95%;}
+</style>
+<body>
+
+<!--доработать а то музыка не запускаеться<audio autoplay controls>
+<source src="file:///C:/Users/Owner/Desktop/web_game/audio/ccc.mp3" type="audio/mp3">
+</audio>-->
+
+<canvas title='жизни' id='hp' class='hp'></canvas><div class='hp1' id='hp1'>100/100</div>
+<canvas title='уровень' id='lvl' class='lvl'></canvas><div class='lvl1' id='lvl1'>1</div>
+<canvas title='золото' id='gold' class='gold'></canvas><div class='gold1' id='gold1'>0</div>
+<canvas title='защита' id='def' class='def'></canvas><div class='def1' id='def1'>0</div>
+<canvas onclick='menuon0()' title='меню' id='menus' class='menus'></canvas>
+<canvas id='main' class='main'></canvas>
+
+<div onclick='special_right()' class="console"></div>
+
+<div class='shopdiv' style='position:absolute;top:60;display:none'>
+<div class='shop'>
+<canvas id='shop1' class='shop1'></canvas>
+<canvas id='shop2' class='shop2'></canvas>
+<span onclick='shopon1()' align="center" class='shopbtn1' title='+10 к максимальной жизни'>25</span>
+<span onclick='shopon2()' align="center" class='shopbtn2' title='+1 к защите'>50</span>
+<span onclick='shopon3()' align="center" class='shopbtn3'>назад</span>
+</div>
+</div>
+
+<div class='menudiv' style='position:absolute;top:60;display:none'>
+<div class='menu'>
+<span onclick='menuon1()' align="center" class='menubtn1'>продолжить</span>
+<span onclick='menuon2()' align="center" class='menubtn2'>магазин</span>
+<span onclick='menuon3()' align="center" class='menubtn3'>как играть?</span>
+<span onclick='menuon4()' align="center" class='menubtn4'>об игре</span>
+</div>
+</div>
+
+<div style='width:40;height:200;position:absolute;left:500;top:60;border: solid 2px black;'>
+<img id='armor1' src='items/1.png' onclick='armor_off(1)'>
+<img id='armor2' src='items/2.png' onclick='armor_off(2)'>
+<img id='armor3' src='items/3.png' onclick='armor_off(3)'>
+<img id='armor4' src='items/4.png' onclick='armor_off(4)'>
+<img id='armor5' src='items/5.png' onclick='armor_off(5)'>
+</div>
+
+<div style='width:40;height:40;position:absolute;left:560;top:60;border: solid 2px black;'>
+<img id='sword1' src='items/6.png' onclick='sword_off(1)'>
+</div>
+
+<div style='width:216;height:128;position:absolute;left:620;top:60;border: solid 2px black;'>
+<img id='item1' src='items/0.png' onclick='item_off(1)'>
+<img id='item2' src='items/0.png' onclick='item_off(2)'>
+<img id='item3' src='items/0.png' onclick='item_off(3)'>
+<img id='item4' src='items/0.png' onclick='item_off(4)'>
+<img id='item5' src='items/0.png' onclick='item_off(5)'>
+
+<img id='item6' src='items/0.png' onclick='item_off(6)'>
+<img id='item7' src='items/0.png' onclick='item_off(7)'>
+<img id='item8' src='items/0.png' onclick='item_off(8)'>
+<img id='item9' src='items/0.png' onclick='item_off(9)'>
+<img id='item10' src='items/0.png' onclick='item_off(10)'>
+
+<img id='item11' src='items/0.png' onclick='item_off(11)'>
+<img id='item12' src='items/0.png' onclick='item_off(12)'>
+<img id='item13' src='items/0.png' onclick='item_off(13)'>
+<img id='item14' src='items/0.png' onclick='item_off(14)'>
+<img id='item15' src='items/0.png' onclick='item_off(15)'>
+</div>
+
+
+
+
+
+</body>
+
+<script src="user/0.js">
+</script>
+<script src="script/map.js">
+</script>
+<script src="script/game.js">
+</script>
+<script src="script/bot.js">
+</script>
+<script src="script/creator.js">
+</script>
+<script src="script/item.js">
+</script>
+<script>
+shop_img()
+
+function shopon1(){
+if(gold>24){pmhp+=10;gold-=25;newdata()}}
+function shopon2(){
+if(gold>49){def++;gold-=50;newdata();}}
+function shopon3(){
+document.getElementsByClassName('menudiv')[0].style.display='block';
+document.getElementsByClassName('main')[0].style.display='none';
+document.getElementsByClassName('shopdiv')[0].style.display='none';}
+
+function menuon2(){
+document.getElementsByClassName('menudiv')[0].style.display='none';
+document.getElementsByClassName('main')[0].style.display='none';
+document.getElementsByClassName('shopdiv')[0].style.display='block';}
+
+function menuon1(){
+document.getElementsByClassName('main')[0].style.display='block';
+document.getElementsByClassName('shopdiv')[0].style.display='none';
+document.getElementsByClassName('menudiv')[0].style.display='none';}
+
+function menuon0(){
+document.getElementsByClassName('main')[0].style.display='none';
+document.getElementsByClassName('shopdiv')[0].style.display='none';
+document.getElementsByClassName('menudiv')[0].style.display='block';}
+
+function special_right(){command();}
+
+function armor_off(a){
+if(armor_slot[a]!=0){
+for(i=1;item_slot.length>i;i++){
+if(item_slot[i]==0){
+item_slot[i]=armor_slot[a];
+def-=armor_slot[a][5];
+armor_slot[a]=0;
+i=item_slot.length;
+newdata();
+}}}}
+
+function sword_off(a){
+if(sword_slot[a]!=0){
+for(i=1;item_slot.length>i;i++){
+if(item_slot[i]==0){
+item_slot[i]=sword_slot[a];
+atk-=sword_slot[a][5];
+sword_slot[a]=0;
+i=item_slot.length;
+newdata();
+}}}}
+
+
+function item_off(a){
+if(item_slot[a][1]=='sword'){
+if(sword_slot[item_slot[a][3]]==0){
+sword_slot[item_slot[a][3]]=item_slot[a];
+atk+=item_slot[a][5];
+item_slot[a]=0;
+newdata();}}
+
+if(item_slot[a]!=0){
+if(item_slot[a][1]=='armor'){
+if(armor_slot[item_slot[a][3]]==0){
+armor_slot[item_slot[a][3]]=item_slot[a];
+def+=item_slot[a][5];
+item_slot[a]=0;
+newdata();}}
+if(item_slot[a][1]=='crystal'){
+if((item_slot[a][7]==1)&&(pmhp>php)){php+=item_slot[a][5];if(php>pmhp){php=pmhp};item_slot[a][3]--;newdata();}
+if(item_slot[a][7]==2){xp+=item_slot[a][5];item_slot[a][3]--;newdata();}
+if(item_slot[a][7]==3){pmhp+=item_slot[a][5];item_slot[a][3]--;newdata();}
+}
+
+}}
+
+function shop_img(){
+var tilesetImage2 = new Image();
+tilesetImage2.src = 'img/item.png';
+
+var canvas1 = document.getElementById('shop1');
+var ctx1 = canvas1.getContext('2d');
+var canvas2 = document.getElementById('shop2');
+var ctx2 = canvas2.getContext('2d');
+
+canvas1.height=canvas1.width=canvas2.height=canvas2.width=60;
+var tileSize2 = 60;
+tilesetImage2.onload = function(){
+var imageNumTiles2 = 3;
+var tile2=3;
+var tileRow2 = (tile2 / imageNumTiles2) | 0; 
+var tileCol2 = (tile2 % imageNumTiles2) | 0; 
+ctx1.drawImage(tilesetImage2, (tileCol2 * tileSize2), (tileRow2 * tileSize2), tileSize2, tileSize2, (0 * tileSize2), (0 * tileSize2), tileSize2, tileSize2);
+tile2=4;
+tileRow2 = (tile2 / imageNumTiles2) | 0; 
+tileCol2 = (tile2 % imageNumTiles2) | 0; 
+ctx2.drawImage(tilesetImage2, (tileCol2 * tileSize2), (tileRow2 * tileSize2), tileSize2, tileSize2, (0 * tileSize2), (0 * tileSize2), tileSize2, tileSize2);
+}}
+</script>
+</html>

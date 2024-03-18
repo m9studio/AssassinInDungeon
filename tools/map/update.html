@@ -1,0 +1,29 @@
+
+<link rel='icon' type="image/x-icon" href='img/icon.png'>
+
+<body>
+<input id='start1'><br>
+<input id='start2'><br>
+<button onclick='play()'>старт</button><br>
+<div id='info'></div>
+</body>
+<script>
+var text='<br>';
+var n1;
+var n2;
+var n=[];
+function play(){
+var c=start1.value;
+n=c.split(',');
+n1=start2.value;
+n2=n.length/n1;
+for(i1=0;n1>i1;i1++){text+='[';for(i2=0;n2>i2;i2++){
+if(i2<(n2-1)){text+=n[(i1*n2)+i2]+',';}else if(i2==(n2-1)){text+=n[(i1*n2)+i2];}
+}text+='],<br>';}text+='<br>';
+info.innerHTML=text;
+}
+
+
+
+
+</script>
