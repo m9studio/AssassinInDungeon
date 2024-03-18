@@ -1,0 +1,20 @@
+
+.shop_div{position:absolute;
+border: solid 2px black;
+top:60px;
+background:while;
+width:200px;
+height:350px;
+}
+
+.shop_btn{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:150px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+left:20}
+.shop_btn:hover{background:red;}
+

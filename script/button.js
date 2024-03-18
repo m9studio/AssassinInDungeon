@@ -8,10 +8,26 @@ var player_time2=false;
 
 function new_map_war(){
 if(ground[py][px]==207){
-if(map_class=='peaceful'){map_class='war';new_map();}else
+if((map_class=='peaceful')){map_class='war';new_map();}else
 if(map_class=='war'){maplvl++;new_map();}}
 if((map_class=='peaceful')&&(px==0)){map_class='normal_0';new_map();}
 if((map_class=='normal_0')&&(px==(ground[0].length-1))){map_class='peaceful';new_map(true, 1, 16);}
+if((map_class=='peaceful')&&(py==0)){map_class='peaceful_0';new_map();}
+if((map_class=='peaceful_0')&&(py==(ground.length-1))){map_class='peaceful';new_map(true, 14, 1);}
+
+if((map_class=='normal_0')&&(px==0)){map_class='normal_1';new_map();}
+if((map_class=='normal_1')&&(px==(ground[0].length-1))){map_class='normal_0';new_map(true, 1, 17);}
+
+if((map_class=='normal_1')&&(px==0)){map_class='normal_2';new_map();}
+if((map_class=='normal_2')&&(px==(ground[0].length-1))){map_class='normal_1';new_map(true, 1, 6);}
+
+if((map_class=='normal_2')&&(px==0)){map_class='normal_3';new_map();}
+if((map_class=='normal_3')&&(px==(ground[0].length-1))){map_class='normal_2';new_map(true, 1, 7);}
+
+if((map_class=='normal_2')&&(py==(ground.length-1))){map_class='normal_4';new_map();}
+if((map_class=='normal_4')&&(py==0)){map_class='normal_2';new_map(true, 9, 17);}
+
+
 
 }
 
@@ -44,11 +60,53 @@ if(((layer1[py][px+1]>127)&&(layer1[py][px+1]<132))&&(layer1[py][px]==197+(playe
 if(((layer1[py-1][px]>127)&&(layer1[py-1][px]<132))&&(layer1[py][px]==196+(player_skin*15))){bothp4(py-1,px)}
 if(((layer1[py+1][px]>127)&&(layer1[py+1][px]<132))&&(layer1[py][px]==198+(player_skin*15))){bothp4(py+1,px)}
 
+if(((layer1[py][px-1]>157)&&(layer1[py][px-1]<162))&&(layer1[py][px]==195+(player_skin*15))){bothp5(py,px-1)}
+if(((layer1[py][px+1]>157)&&(layer1[py][px+1]<162))&&(layer1[py][px]==197+(player_skin*15))){bothp5(py,px+1)}
+if(((layer1[py-1][px]>157)&&(layer1[py-1][px]<162))&&(layer1[py][px]==196+(player_skin*15))){bothp5(py-1,px)}
+if(((layer1[py+1][px]>157)&&(layer1[py+1][px]<162))&&(layer1[py][px]==198+(player_skin*15))){bothp5(py+1,px)}
+
+if(((layer1[py][px-1]>172)&&(layer1[py][px-1]<177))&&(layer1[py][px]==195+(player_skin*15))){bothp6(py,px-1)}
+if(((layer1[py][px+1]>172)&&(layer1[py][px+1]<177))&&(layer1[py][px]==197+(player_skin*15))){bothp6(py,px+1)}
+if(((layer1[py-1][px]>172)&&(layer1[py-1][px]<177))&&(layer1[py][px]==196+(player_skin*15))){bothp6(py-1,px)}
+if(((layer1[py+1][px]>172)&&(layer1[py+1][px]<177))&&(layer1[py][px]==198+(player_skin*15))){bothp6(py+1,px)}
+
+if(((layer1[py][px-1]>187)&&(layer1[py][px-1]<192))&&(layer1[py][px]==195+(player_skin*15))){bothp7(py,px-1)}
+if(((layer1[py][px+1]>187)&&(layer1[py][px+1]<192))&&(layer1[py][px]==197+(player_skin*15))){bothp7(py,px+1)}
+if(((layer1[py-1][px]>187)&&(layer1[py-1][px]<192))&&(layer1[py][px]==196+(player_skin*15))){bothp7(py-1,px)}
+if(((layer1[py+1][px]>187)&&(layer1[py+1][px]<192))&&(layer1[py][px]==198+(player_skin*15))){bothp7(py+1,px)}
+
+
+
+
+
+
+
+if(((layer1[py][px-1]>67)&&(layer1[py][px-1]<72))&&(layer1[py][px]==195+(player_skin*15))){bothp8(py,px-1)}
+if(((layer1[py][px+1]>67)&&(layer1[py][px+1]<72))&&(layer1[py][px]==197+(player_skin*15))){bothp8(py,px+1)}
+if(((layer1[py-1][px]>67)&&(layer1[py-1][px]<72))&&(layer1[py][px]==196+(player_skin*15))){bothp8(py-1,px)}
+if(((layer1[py+1][px]>67)&&(layer1[py+1][px]<72))&&(layer1[py][px]==198+(player_skin*15))){bothp8(py+1,px)}
+
+if(((layer1[py][px-1]>217)&&(layer1[py][px-1]<222))&&(layer1[py][px]==195+(player_skin*15))){bothp9(py,px-1)}
+if(((layer1[py][px+1]>217)&&(layer1[py][px+1]<222))&&(layer1[py][px]==197+(player_skin*15))){bothp9(py,px+1)}
+if(((layer1[py-1][px]>217)&&(layer1[py-1][px]<222))&&(layer1[py][px]==196+(player_skin*15))){bothp9(py-1,px)}
+if(((layer1[py+1][px]>217)&&(layer1[py+1][px]<222))&&(layer1[py][px]==198+(player_skin*15))){bothp9(py+1,px)}
+
+if(((layer1[py][px-1]>202)&&(layer1[py][px-1]<207))&&(layer1[py][px]==195+(player_skin*15))){bothp10(py,px-1)}
+if(((layer1[py][px+1]>202)&&(layer1[py][px+1]<207))&&(layer1[py][px]==197+(player_skin*15))){bothp10(py,px+1)}
+if(((layer1[py-1][px]>202)&&(layer1[py-1][px]<207))&&(layer1[py][px]==196+(player_skin*15))){bothp10(py-1,px)}
+if(((layer1[py+1][px]>202)&&(layer1[py+1][px]<207))&&(layer1[py][px]==198+(player_skin*15))){bothp10(py+1,px)}
+
+
+
+
 
 layer1[py][px]+=4;drawImage();
 setTimeout("layer1[py][px]-=4;drawImage();", 150);
 
-player_stop_atack=500;
+if(speed_atk_on<401){player_stop_atack=500-speed_atk_on;}else{player_stop_atack=100}
+
+
+
 }}
 
 }}
@@ -59,6 +117,8 @@ player_stop_atack=500;
 
 
 document.onkeydown = function checkKeycode(event){
+quest_div0.style.display="none";quest_div.innerHTML="";
+
     var keycode;
     if(!event) var event = window.event;
    keycode = event.which;
@@ -76,24 +136,30 @@ if(keycode==37||keycode==65){if(layer1[py][px-1]==0){layer1[py][px]=0;px-=1;}if(
 
 layer1[py][px]=195+(player_skin*15);
 new_map_war();
-player_stop_run+=125;
+if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}
 }
 
 
 if(keycode==38||keycode==87){var a=true;
 if(layer1[py-1][px]==0){layer1[py][px]=0;py-=1;
 }else if(layer1[py-1][px]==53){layer1[py-1][px]=54;php=pmhp;newdata();
+}else if(layer1[py-1][px]==153){home_on();
+}else if(layer1[py-1][px]==113){shop_on();
+}else if((layer1[py-1][px]==11)&&(map_class=='normal_3')){quest_open(1);
+}else if((layer1[py-1][px]==11)&&(map_class=='quest_1-2')){quest_open(2);
+}else if((layer1[py-1][px]==8)&&(map_class=='normal_3')){quest_open(3);
+}else if((layer1[py-1][px]==8)&&(map_class=='quest_3-4')){quest_open(4);
 }else if(layer1[py-1][px]==39){map_class='peaceful';new_map(true, 22, 17);a=false;}
 if(a==true){
 
 layer1[py][px]=196+(player_skin*15);
 new_map_war();
-}player_stop_run+=125;}
+}if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}}
 if(keycode==39||keycode==68){if(layer1[py][px+1]==0){layer1[py][px]=0;px+=1;}
 
 layer1[py][px]=197+(player_skin*15);
 new_map_war();
-player_stop_run+=125;
+if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}
 }
 
 
@@ -102,7 +168,7 @@ if(keycode==40||keycode==83){if(layer1[py+1][px]==0){layer1[py][px]=0;py+=1;}
 
 layer1[py][px]=198+(player_skin*15);
 new_map_war();
-player_stop_run+=125;
+if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}
 }
 
 }
@@ -146,7 +212,7 @@ if(((layer1[py+1][px]>127)&&(layer1[py+1][px]<132))&&(layer1[py][px]==198+(playe
 layer1[py][px]+=4;drawImage();
 setTimeout("layer1[py][px]-=4;drawImage();", 150);
 
-player_stop_atack=500;
+if(speed_atk_on<401){player_stop_atack=500-speed_atk_on;}else{player_stop_atack=100}
 }}
 
 
@@ -165,7 +231,7 @@ if(e==1){if(layer1[py][px-1]==0){layer1[py][px]=0;px-=1;}if(player_class=='creat
 
 layer1[py][px]=195+(player_skin*15);
 new_map_war();
-player_stop_run+=125;
+if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}
 }
 
 
@@ -177,12 +243,12 @@ if(a==true){
 
 layer1[py][px]=196+(player_skin*15);
 new_map_war();
-}player_stop_run+=125;}
+}if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}}
 if(e==3){if(layer1[py][px+1]==0){layer1[py][px]=0;px+=1;}
 
 layer1[py][px]=197+(player_skin*15);
 new_map_war();
-player_stop_run+=125;
+if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}
 }
 
 
@@ -191,7 +257,7 @@ if(e==4){if(layer1[py+1][px]==0){layer1[py][px]=0;py+=1;}
 
 layer1[py][px]=198+(player_skin*15);
 new_map_war();
-player_stop_run+=125;
+if(speed_run_on<76){player_stop_run+=125-speed_run_on;}else{player_stop_run=50}
 }
 
 drawImage();
@@ -225,7 +291,7 @@ if(((layer1[py+1][px]>127)&&(layer1[py+1][px]<132))&&(layer1[py][px]==198+(playe
 layer1[py][px]+=4;drawImage();
 setTimeout("layer1[py][px]-=4;drawImage();", 150);
 
-player_stop_atack=500;
+if(speed_atk_on<401){player_stop_atack=500-speed_atk_on;}else{player_stop_atack=100}
 }}
 
 

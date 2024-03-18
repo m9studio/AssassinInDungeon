@@ -1,278 +1,233 @@
 
 /*ии ботов*/
-function bot_0(){
-if(layer1[py][px+1]==157){php-=5;newdata();}
-if(layer1[py][px-1]==157){php-=5;newdata();}
-if(layer1[py-1][px]==157){php-=5;newdata();}
-if(layer1[py+1][px]==157){php-=5;newdata();}
-}
 
 
 
 
-function bot_1(){
-if((layer1[py][px+1]>22)&&(layer1[py][px+1]<27)){layer1[py][px+1]=23;drawImage();playerhp1();}
-if((layer1[py][px-1]>22)&&(layer1[py][px-1]<27)){layer1[py][px-1]=25;drawImage();playerhp1();}
-if((layer1[py-1][px]>22)&&(layer1[py-1][px]<27)){layer1[py-1][px]=26;drawImage();playerhp1();}
-if((layer1[py+1][px]>22)&&(layer1[py+1][px]<27)){layer1[py+1][px]=24;drawImage();playerhp1();}
 
-if((layer1[py+1][px+1]>22)&&(layer1[py+1][px+1]<27)){
-if(layer1[py][px+1]==0){layer1[py+1][px+1]=0;layer1[py][px+1]=24; layer2[py][px+1]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py][px+1]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px+1]=0;layer1[py+1][px]=23; layer2[py+1][px]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py+1][px]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}
-drawImage();}
 
-if((layer1[py-1][px-1]>22)&&(layer1[py-1][px-1]<27)){
-if(layer1[py][px-1]==0){layer1[py-1][px-1]=0;layer1[py][px-1]=26;layer2[py][px-1]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py][px-1]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px-1]=0;layer1[py-1][px]=25;layer2[py-1][px]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py-1][px]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}
-drawImage();}
 
-if((layer1[py-1][px+1]>22)&&(layer1[py-1][px+1]<27)){
-if(layer1[py][px+1]==0){layer1[py-1][px+1]=0;layer1[py][px+1]=26;layer2[py][px+1]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py][px+1]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px+1]=0;layer1[py-1][px]=23;layer2[py-1][px]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py-1][px]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}
-drawImage();}
 
-if((layer1[py+1][px-1]>22)&&(layer1[py+1][px-1]<27)){
-if(layer1[py][px-1]==0){layer1[py+1][px-1]=0;layer1[py][px-1]=24;layer2[py][px-1]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py][px-1]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px-1]=0;layer1[py+1][px]=25;layer2[py+1][px]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py+1][px]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}
-drawImage();}
-
-if((layer1[py][px+2]>22)&&(layer1[py][px+2]<27)&&(layer1[py][px+1]==0)){layer1[py][px+2]=0;layer1[py][px+1]=23; layer2[py][px+1]=layer2[py][px+2];layer2[py][px+2]=0; layer3[py][px+1]=layer3[py][px+2];layer3[py][px+2]=0;
-drawImage();}
-if((layer1[py+2][px]>22)&&(layer1[py+2][px]<27)&&(layer1[py+1][px]==0)){layer1[py+2][px]=0;layer1[py+1][px]=24; layer2[py+1][px]=layer2[py+2][px];layer2[py+2][px]=0; layer3[py+1][px]=layer3[py+2][px];layer3[py+2][px]=0;
-drawImage();}
-if((layer1[py][px-2]>22)&&(layer1[py][px-2]<27)&&(layer1[py][px-1]==0)){layer1[py][px-2]=0;layer1[py][px-1]=25; layer2[py][px-1]=layer2[py][px-2];layer2[py][px-2]=0; layer3[py][px-1]=layer3[py][px-2];layer3[py][px-2]=0;
-drawImage();}
-if(py>1){
-if((layer1[py-2][px]>22)&&(layer1[py-2][px]<27)&&(layer1[py-1][px]==0)){layer1[py-2][px]=0;layer1[py-1][px]=26; layer2[py-1][px]=layer2[py-2][px];layer2[py-2][px]=0; layer3[py-1][px]=layer3[py-2][px];layer3[py-2][px]=0;
-drawImage();}}
-}
-
-
-
-
-function bot_2(){
-if((layer1[py][px+1]>82)&&(layer1[py][px+1]<87)){layer1[py][px+1]=83;drawImage();playerhp2();}
-if((layer1[py][px-1]>82)&&(layer1[py][px-1]<87)){layer1[py][px-1]=85;drawImage();playerhp2();}
-if((layer1[py-1][px]>82)&&(layer1[py-1][px]<87)){layer1[py-1][px]=86;drawImage();playerhp2();}
-if((layer1[py+1][px]>82)&&(layer1[py+1][px]<87)){layer1[py+1][px]=84;drawImage();playerhp2();}
-
-if((layer1[py+1][px+1]>82)&&(layer1[py+1][px+1]<87)){
-if(layer1[py][px+1]==0){layer1[py+1][px+1]=0;layer1[py][px+1]=84;layer2[py][px+1]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py][px+1]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px+1]=0;layer1[py+1][px]=83;layer2[py+1][px]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py+1][px]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}
-drawImage();}
-
-if((layer1[py-1][px-1]>82)&&(layer1[py-1][px-1]<87)){
-if(layer1[py][px-1]==0){layer1[py-1][px-1]=0;layer1[py][px-1]=86;layer2[py][px-1]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py][px-1]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px-1]=0;layer1[py-1][px]=85;layer2[py-1][px]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py-1][px]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}
-drawImage();}
-
-if((layer1[py-1][px+1]>82)&&(layer1[py-1][px+1]<87)){
-if(layer1[py][px+1]==0){layer1[py-1][px+1]=0;layer1[py][px+1]=86;layer2[py][px+1]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py][px+1]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px+1]=0;layer1[py-1][px]=83;layer2[py-1][px]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py-1][px]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}
-drawImage();}
-
-if((layer1[py+1][px-1]>82)&&(layer1[py+1][px-1]<87)){
-if(layer1[py][px-1]==0){layer1[py+1][px-1]=0;layer1[py][px-1]=84;layer2[py][px-1]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py][px-1]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px-1]=0;layer1[py+1][px]=85;layer2[py+1][px]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py+1][px]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}
-drawImage();}
-
-if((layer1[py][px+2]>82)&&(layer1[py][px+2]<87)&&(layer1[py][px+1]==0)){layer1[py][px+2]=0;layer1[py][px+1]=83;layer2[py][px+1]=layer2[py][px+2];layer2[py][px+2]=0; layer3[py][px+1]=layer3[py][px+2];layer3[py][px+2]=0;
-drawImage();}
-if((layer1[py+2][px]>82)&&(layer1[py+2][px]<87)&&(layer1[py+1][px]==0)){layer1[py+2][px]=0;layer1[py+1][px]=84;layer2[py+1][px]=layer2[py+2][px];layer2[py+2][px]=0; layer3[py+1][px]=layer3[py+2][px];layer3[py+2][px]=0;
-drawImage();}
-if((layer1[py][px-2]>82)&&(layer1[py][px-2]<87)&&(layer1[py][px-1]==0)){layer1[py][px-2]=0;layer1[py][px-1]=85;layer2[py][px-1]=layer2[py][px-2];layer2[py][px-2]=0; layer3[py][px-1]=layer3[py][px-2];layer3[py][px-2]=0;
-drawImage();}
-if(py>1){
-if((layer1[py-2][px]>82)&&(layer1[py-2][px]<87)&&(layer1[py-1][px]==0)){layer1[py-2][px]=0;layer1[py-1][px]=86;layer2[py-1][px]=layer2[py-2][px];layer2[py-2][px]=0; layer3[py-1][px]=layer3[py-2][px];layer3[py-2][px]=0;
-drawImage();}}
-}
-
-
-
-
-function bot_3(){
-if((layer1[py][px+1]>142)&&(layer1[py][px+1]<147)){layer1[py][px+1]=145;drawImage();playerhp3();}
-if((layer1[py][px-1]>142)&&(layer1[py][px-1]<147)){layer1[py][px-1]=143;drawImage();playerhp3();}
-if((layer1[py-1][px]>142)&&(layer1[py-1][px]<147)){layer1[py-1][px]=146;drawImage();playerhp3();}
-if((layer1[py+1][px]>142)&&(layer1[py+1][px]<147)){layer1[py+1][px]=144;drawImage();playerhp3();}
-
-if((layer1[py+1][px+1]>142)&&(layer1[py+1][px+1]<147)){
-if(layer1[py][px+1]==0){layer1[py+1][px+1]=0;layer1[py][px+1]=144;layer2[py][px+1]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py][px+1]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px+1]=0;layer1[py+1][px]=145;layer2[py+1][px]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py+1][px]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}
-drawImage();}
-
-if((layer1[py-1][px-1]>142)&&(layer1[py-1][px-1]<147)){
-if(layer1[py][px-1]==0){layer1[py-1][px-1]=0;layer1[py][px-1]=146;layer2[py][px-1]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py][px-1]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px-1]=0;layer1[py-1][px]=143;layer2[py-1][px]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py-1][px]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}
-drawImage();}
-
-if((layer1[py-1][px+1]>142)&&(layer1[py-1][px+1]<147)){
-if(layer1[py][px+1]==0){layer1[py-1][px+1]=0;layer1[py][px+1]=146;layer2[py][px+1]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py][px+1]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px+1]=0;layer1[py-1][px]=145;layer2[py-1][px]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py-1][px]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}
-drawImage();}
-
-if((layer1[py+1][px-1]>142)&&(layer1[py+1][px-1]<147)){
-if(layer1[py][px-1]==0){layer1[py+1][px-1]=0;layer1[py][px-1]=144;layer2[py][px-1]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py][px-1]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px-1]=0;layer1[py+1][px]=143;layer2[py+1][px]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py+1][px]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}
-drawImage();}
-
-if((layer1[py][px+2]>142)&&(layer1[py][px+2]<147)&&(layer1[py][px+1]==0)){layer1[py][px+2]=0;layer1[py][px+1]=145;layer2[py][px+1]=layer2[py][px+2];layer2[py][px+2]=0; layer3[py][px+1]=layer3[py][px+2];layer3[py][px+2]=0;
-drawImage();}
-if((layer1[py+2][px]>142)&&(layer1[py+2][px]<147)&&(layer1[py+1][px]==0)){layer1[py+2][px]=0;layer1[py+1][px]=144;layer2[py+1][px]=layer2[py+2][px];layer2[py+2][px]=0; layer3[py+1][px]=layer3[py+2][px];layer3[py+2][px]=0;
-drawImage();}
-if((layer1[py][px-2]>142)&&(layer1[py][px-2]<147)&&(layer1[py][px-1]==0)){layer1[py][px-2]=0;layer1[py][px-1]=143;layer2[py][px-1]=layer2[py][px-2];layer2[py][px-2]=0; layer3[py][px-1]=layer3[py][px-2];layer3[py][px-2]=0;
-drawImage();}
-if(py>1){
-if((layer1[py-2][px]>142)&&(layer1[py-2][px]<147)&&(layer1[py-1][px]==0)){layer1[py-2][px]=0;layer1[py-1][px]=146;layer2[py-1][px]=layer2[py-2][px];layer2[py-2][px]=0; layer3[py-1][px]=layer3[py-2][px];layer3[py-2][px]=0;
-drawImage();}}
-}
-
-
-
-
-function bot_4(){
-if((layer1[py][px+1]>127)&&(layer1[py][px+1]<132)){layer1[py][px+1]=130;drawImage();playerhp3();}
-if((layer1[py][px-1]>127)&&(layer1[py][px-1]<132)){layer1[py][px-1]=128;drawImage();playerhp3();}
-if((layer1[py-1][px]>127)&&(layer1[py-1][px]<132)){layer1[py-1][px]=131;drawImage();playerhp3();}
-if((layer1[py+1][px]>127)&&(layer1[py+1][px]<132)){layer1[py+1][px]=129;drawImage();playerhp3();}
-
-if((layer1[py+1][px+1]>127)&&(layer1[py+1][px+1]<132)){
-if(layer1[py][px+1]==0){layer1[py+1][px+1]=0;layer1[py][px+1]=129;layer2[py][px+1]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py][px+1]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px+1]=0;layer1[py+1][px]=130;layer2[py+1][px]=layer2[py+1][px+1];layer2[py+1][px+1]=0; layer3[py+1][px]=layer3[py+1][px+1];layer3[py+1][px+1]=0;}
-drawImage();}
-
-if((layer1[py-1][px-1]>127)&&(layer1[py-1][px-1]<132)){
-if(layer1[py][px-1]==0){layer1[py-1][px-1]=0;layer1[py][px-1]=131;layer2[py][px-1]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py][px-1]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px-1]=0;layer1[py-1][px]=128;layer2[py-1][px]=layer2[py-1][px-1];layer2[py-1][px-1]=0; layer3[py-1][px]=layer3[py-1][px-1];layer3[py-1][px-1]=0;}
-drawImage();}
-
-if((layer1[py-1][px+1]>127)&&(layer1[py-1][px+1]<132)){
-if(layer1[py][px+1]==0){layer1[py-1][px+1]=0;layer1[py][px+1]=131;layer2[py][px+1]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py][px+1]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}else
-if(layer1[py-1][px]==0){layer1[py-1][px+1]=0;layer1[py-1][px]=130;layer2[py-1][px]=layer2[py-1][px+1];layer2[py-1][px+1]=0; layer3[py-1][px]=layer3[py-1][px+1];layer3[py-1][px+1]=0;}
-drawImage();}
-
-if((layer1[py+1][px-1]>127)&&(layer1[py+1][px-1]<132)){
-if(layer1[py][px-1]==0){layer1[py+1][px-1]=0;layer1[py][px-1]=129;layer2[py][px-1]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py][px-1]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}else
-if(layer1[py+1][px]==0){layer1[py+1][px-1]=0;layer1[py+1][px]=128;layer2[py+1][px]=layer2[py+1][px-1];layer2[py+1][px-1]=0; layer3[py+1][px]=layer3[py+1][px-1];layer3[py+1][px-1]=0;}
-drawImage();}
-
-if((layer1[py][px+2]>127)&&(layer1[py][px+2]<132)&&(layer1[py][px+1]==0)){layer1[py][px+2]=0;layer1[py][px+1]=130;layer2[py][px+1]=layer2[py][px+2];layer2[py][px+2]=0; layer3[py][px+1]=layer3[py][px+2];layer3[py][px+2]=0;
-drawImage();}
-if((layer1[py+2][px]>127)&&(layer1[py+2][px]<132)&&(layer1[py+1][px]==0)){layer1[py+2][px]=0;layer1[py+1][px]=129;layer2[py+1][px]=layer2[py+2][px];layer2[py+2][px]=0; layer3[py+1][px]=layer3[py+2][px];layer3[py+2][px]=0;
-drawImage();}
-if((layer1[py][px-2]>127)&&(layer1[py][px-2]<132)&&(layer1[py][px-1]==0)){layer1[py][px-2]=0;layer1[py][px-1]=128;layer2[py][px-1]=layer2[py][px-2];layer2[py][px-2]=0; layer3[py][px-1]=layer3[py][px-2];layer3[py][px-2]=0;
-drawImage();}
-if(py>1){
-if((layer1[py-2][px]>127)&&(layer1[py-2][px]<132)&&(layer1[py-1][px]==0)){layer1[py-2][px]=0;layer1[py-1][px]=131;layer2[py-1][px]=layer2[py-2][px];layer2[py-2][px]=0; layer3[py-1][px]=layer3[py-2][px];layer3[py-2][px]=0;
-drawImage();}}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function new_bot1(){
-botn1++;
-var x1; 
-var y1;
-var c1;
-var b1;
-if(map_class=='war'){
-c1=ground.length;
-b1=ground[0].length;}
-var a1=false;
-/*Math.floor(Math.random() * (max - min + 1)) + min;*/
-while(a1==false){
-y1=Math.floor(Math.random()*c1+0);
-x1=Math.floor(Math.random()*b1+0);
-if(layer1[y1][x1]==0){a1=true;layer1[y1][x1]=26;layer3[y1][x1]=layer2[y1][x1]=100;drawImage();}
+function bot_ai(a1, a2){
+//a1-номер скина 
+//a2-номер бота
+for(i=0;i<botx[a2].length;i++){
+y=botx[a2][i][0];
+x=botx[a2][i][1];
+var a0=false;
+if((x>0)&&((player_skin*15+194)<layer1[y][x-1])&&(layer1[y][x-1]<(player_skin*15+199))){
+layer1[y][x]=8+a1*15; 
+player_hp_none(a2)
+a0=true;
+}else
+if((y>0)&&((player_skin*15+194)<layer1[y-1][x])&&(layer1[y-1][x]<(player_skin*15+199))){
+layer1[y][x]=9+a1*15; 
+player_hp_none(a2)
+a0=true;
+}else
+if(((player_skin*15+194)<layer1[y][x+1])&&(layer1[y][x+1]<(player_skin*15+199))){
+layer1[y][x]=10+a1*15; 
+player_hp_none(a2)
+a0=true;
+}else
+if(((player_skin*15+194)<layer1[y+1][x])&&(layer1[y+1][x]<(player_skin*15+199))){
+layer1[y][x]=11+a1*15; 
+player_hp_none(a2)
+a0=true;
+}else
+
+
+if((x>1)&&((player_skin*15+194)<layer1[y][x-2])&&(layer1[y][x-2]<(player_skin*15+199))&&(layer1[y][x-1]==0)){
+layer1[y][x]=0;
+layer1[y][x-1]=8+a1*15;
+botx[a2][i][1]=x-1;
+layer2[y][x-1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x-1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if((y>1)&&((player_skin*15+194)<layer1[y-2][x])&&(layer1[y-2][x]<(player_skin*15+199))&&(layer1[y-1][x]==0)){
+layer1[y][x]=0;
+layer1[y-1][x]=9+a1*15;
+botx[a2][i][0]=y-1;
+layer2[y-1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y-1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(((player_skin*15+194)<layer1[y][x+2])&&(layer1[y][x+2]<(player_skin*15+199))&&(layer1[y][x+1]==0)){
+layer1[y][x]=0;
+layer1[y][x+1]=10+a1*15;
+botx[a2][i][1]=x+1;
+layer2[y][x+1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x+1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(((player_skin*15+194)<layer1[y+2][x])&&(layer1[y+2][x]<(player_skin*15+199))&&(layer1[y+1][x]==0)){
+layer1[y][x]=0;
+layer1[y+1][x]=11+a1*15;
+botx[a2][i][0]=y+1;
+layer2[y+1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y+1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(((player_skin*15+194)<layer1[y+1][x+1])&&(layer1[y+1][x+1]<(player_skin*15+199))){
+if(layer1[y+1][x]==0){
+layer1[y][x]=0;
+layer1[y+1][x]=11+a1*15;
+botx[a2][i][0]=y+1;
+layer2[y+1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y+1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(layer1[y][x+1]==0){
+layer1[y][x]=0;
+layer1[y][x+1]=10+a1*15;
+botx[a2][i][1]=x+1;
+layer2[y][x+1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x+1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}}else
+if(((player_skin*15+194)<layer1[y-1][x-1])&&(layer1[y-1][x-1]<(player_skin*15+199))){
+if(layer1[y-1][x]==0){
+layer1[y][x]=0;
+layer1[y-1][x]=9+a1*15;
+botx[a2][i][0]=y-1;
+layer2[y-1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y-1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(layer1[y][x-1]==0){
+layer1[y][x]=0;
+layer1[y][x-1]=8+a1*15;
+botx[a2][i][1]=x-1;
+layer2[y][x-1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x-1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}}else
+if(((player_skin*15+194)<layer1[y+1][x-1])&&(layer1[y+1][x-1]<(player_skin*15+199))){
+if(layer1[y+1][x]==0){
+layer1[y][x]=0;
+layer1[y+1][x]=11+a1*15;
+botx[a2][i][0]=y+1;
+layer2[y+1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y+1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(layer1[y][x-1]==0){
+layer1[y][x]=0;
+layer1[y][x-1]=8+a1*15;
+botx[a2][i][1]=x-1;
+layer2[y][x-1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x-1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}}else
+if(((player_skin*15+194)<layer1[y-1][x+1])&&(layer1[y-1][x+1]<(player_skin*15+199))){
+if(layer1[y-1][x]==0){
+layer1[y][x]=0;
+layer1[y-1][x]=9+a1*15;
+botx[a2][i][0]=y-1;
+layer2[y-1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y-1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}else
+if(layer1[y][x+1]==0){
+layer1[y][x]=0;
+layer1[y][x+1]=10+a1*15;
+botx[a2][i][1]=x+1;
+layer2[y][x+1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x+1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
 }}
 
-function new_bot2(){
-botn2++;
-var x1; 
-var y1;
-var c1;
-var b1;
-if(map_class=='war'){
-c1=ground.length;
-b1=ground[0].length;}
-var a1=false;
-/*Math.floor(Math.random() * (max - min + 1)) + min;*/
-while(a1==false){
-y1=Math.floor(Math.random()*c1+0);
-x1=Math.floor(Math.random()*b1+0);
-if(layer1[y1][x1]==0){a1=true;layer1[y1][x1]=86;layer3[y1][x1]=layer2[y1][x1]=150;drawImage();}
-}}
 
-function new_bot3(){
-botn3++;
-var x1; 
-var y1;
-var c1;
-var b1;
-if(map_class=='normal_0'){
-c1=ground.length;
-b1=ground[0].length;}
-var a1=false;
-/*Math.floor(Math.random() * (max - min + 1)) + min;*/
-while(a1==false){
-y1=Math.floor(Math.random()*c1+0);
-x1=Math.floor(Math.random()*b1+0);
-if(layer1[y1][x1]==0){a1=true;layer1[y1][x1]=146;layer3[y1][x1]=layer2[y1][x1]=50;drawImage();}
-}}
 
-function new_bot4(){
-botn4++;
-var x1; 
-var y1;
-var c1;
-var b1;
-if(map_class=='normal_0'){
-c1=ground.length;
-b1=ground[0].length;}
-var a1=false;
-/*Math.floor(Math.random() * (max - min + 1)) + min;*/
-while(a1==false){
-y1=Math.floor(Math.random()*c1+0);
-x1=Math.floor(Math.random()*b1+0);
-if(layer1[y1][x1]==0){a1=true;layer1[y1][x1]=131;layer3[y1][x1]=layer2[y1][x1]=75;drawImage();}
+
+if(a0==false){
+b=Math.floor(Math.random() * (10 - 0 + 1)) + 0;
+if(b==1){
+if(layer1[y][x+1]==0){
+layer1[y][x]=0;
+layer1[y][x+1]=10+a1*15;
+botx[a2][i][1]=x+1;
+layer2[y][x+1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x+1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
 }}
+if(b==2){
+if(layer1[y-1][x]==0){
+layer1[y][x]=0;
+layer1[y-1][x]=9+a1*15;
+botx[a2][i][0]=y-1;
+layer2[y-1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y-1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}}
+if(b==3){
+if(layer1[y][x-1]==0){
+layer1[y][x]=0;
+layer1[y][x-1]=8+a1*15;
+botx[a2][i][1]=x-1;
+layer2[y][x-1]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y][x-1]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}}
+if(b==4){
+if(layer1[y+1][x]==0){
+layer1[y][x]=0;
+layer1[y+1][x]=11+a1*15;
+botx[a2][i][0]=y+1;
+layer2[y+1][x]=layer2[y][x];
+layer2[y][x]=0;
+layer3[y+1][x]=layer3[y][x];
+layer3[y][x]=0;
+a0=true;
+}}}
+
+
+
+} drawImage();}
+
+
+
+function player_hp_none(a){
+if(a==1){playerhp1();}
+if(a==2){playerhp2();}
+if(a==3){playerhp3();}
+if(a==4){playerhp4();}
+if(a==5){playerhp5();}
+if(a==6){playerhp6();}
+if(a==7){playerhp7();}
+if(a==8){playerhp8();}
+if(a==9){playerhp9();}
+if(a==10){playerhp10();}
+}
+

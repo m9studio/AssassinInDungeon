@@ -1,0 +1,28 @@
+.home_menu{
+position:absolute;
+border: solid 2px black;
+top:60px;
+background:while;
+width:300px;
+height:300px;
+}
+
+.btn_home1{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:125px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;}
+.btn_home1:hover{background:red;}
+
+.btn_home{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:250px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;}
+.btn_home:hover{background:red;}

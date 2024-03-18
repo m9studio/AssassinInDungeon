@@ -63,7 +63,7 @@ function newdata(){
 if(php<1){php=0;player_dead();}
 if((100*lvl-1)<xp){pmhp+=10;xp-=100*lvl;lvl++;gold+=5*lvl;php=pmhp;}
 hp1.innerHTML=php+'/'+pmhp;
-def1.innerHTML=def/10;
+//def1.innerHTML=def/10;
 lvl1.innerHTML=lvl;
 lvl1.title=xp+'/'+100*lvl;
 gold1.innerHTML=gold;
@@ -127,121 +127,6 @@ if((map_class=='war')&&(botn1==0)&&(botn2==0)){layer1[dy][dx]=0;drawImage();}
 
 
 
-function playerhp1(){php-=Math.floor(250/def);newdata();}
-function playerhp2(){php-=Math.floor(300/def);newdata();}
-function playerhp3(){php-=Math.floor(100/def);newdata();}
-function playerhp4(){php-=Math.floor(150/def);newdata();}
-
-//Math.floor(Math.random() * (max - min + 1)) + min;
-
-function bothp1(y,x){layer2[y][x]-=atk;drawImage();
-if(layer2[y][x]<1){layer2[y][x]=0;layer3[y][x]=0;
-layer1[y][x]=0;drawImage();botn1--;gold+=2;xp+=3;
-
-i=Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-
-if(i<6){
-ii=Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-item_slot2[item_slot2.length]=[100+ii,1];
-}
-if(i>90){
-ii=Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-item_slot1[item_slot1.length]=[ii,1];
-}
-if((10<i)&&(i<41)){
-ii=Math.floor(Math.random() * (2 - 1 + 1)) + 1;
-ii=ii*10;ii=192+ii;
-i0=0;
-i1=true;
-for(i2=0;i2<item_slot3.length;i2++){
-if(item_slot3[i2][0]==ii){i0=i2;i1=false}
-}
-if(i1==true){item_slot3[item_slot3.length]=[ii,1]}
-if(i1==false){item_slot3[i0][1]++}
-}
-
-
-newdata();
-door_map();}}
-
-function bothp2(y,x){layer2[y][x]-=atk;drawImage();
-if(layer2[y][x]<1){layer2[y][x]=0;layer3[y][x]=0;
-layer1[y][x]=0;drawImage();botn2--;gold+=4;xp+=5;
-
-
-i=Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-
-if(i<16){
-ii=Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-item_slot2[item_slot2.length]=[100+ii,1];
-}
-if(i>84){
-ii=Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-item_slot1[item_slot1.length]=[ii,1];
-}
-if((10<i)&&(i<41)){
-ii=Math.floor(Math.random() * (2 - 1 + 1)) + 1;
-ii=ii*10;ii=192+ii;
-i0=0;
-i1=true;
-for(i2=0;i2<item_slot3.length;i2++){
-if(item_slot3[i2][0]==ii){i0=i2;i1=false}
-}
-if(i1==true){item_slot3[item_slot3.length]=[ii,1]}
-if(i1==false){item_slot3[i0][1]++}
-}
-
-
-newdata();
-door_map();}}
-
-function bothp3(y,x){layer2[y][x]-=atk;drawImage();
-if(layer2[y][x]<1){layer2[y][x]=0;layer3[y][x]=0;
-layer1[y][x]=0;drawImage();botn3--;gold++;xp+=1;
-
-
-i=Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-
-if((10<i)&&(i<41)){
-ii=Math.floor(Math.random() * (2 - 1 + 1)) + 1;
-ii=ii*10;ii=191+ii;
-i0=0;
-i1=true;
-for(i2=0;i2<item_slot3.length;i2++){
-if(item_slot3[i2][0]==ii){i0=i2;i1=false}
-}
-if(i1==true){item_slot3[item_slot3.length]=[ii,1]}
-if(i1==false){item_slot3[i0][1]++}
-}
-
-
-newdata();
-door_map();}}
-
-function bothp4(y,x){layer2[y][x]-=atk;drawImage();
-if(layer2[y][x]<1){layer2[y][x]=0;layer3[y][x]=0;
-layer1[y][x]=0;drawImage();botn3--;gold++;xp+=1;
-
-
-i=Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-
-if((10<i)&&(i<41)){
-ii=Math.floor(Math.random() * (2 - 1 + 1)) + 1;
-ii=ii*10;ii=191+ii;
-i0=0;
-i1=true;
-for(i2=0;i2<item_slot3.length;i2++){
-if(item_slot3[i2][0]==ii){i0=i2;i1=false}
-}
-if(i1==true){item_slot3[item_slot3.length]=[ii,1]}
-if(i1==false){item_slot3[i0][1]++}
-}
-
-
-newdata();
-door_map();}}
-
-
 
 
 
@@ -253,6 +138,13 @@ door_map();}}
 
 
 function player_dead(){
+info1.style.display='none';
+home_menu.style.display='none';
+save_div.style.display='none';
+alert_div.style.display='none';
+shop_div.style.display='none';
+quest_div0.style.display="none";
+statusp.style.display="none";
 document.getElementsByClassName('main')[0].style.display='none';
 document.getElementsByClassName('shopdiv')[0].style.display='none';
 document.getElementsByClassName('menudiv')[0].style.display='none';
