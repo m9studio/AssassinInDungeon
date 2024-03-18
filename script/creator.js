@@ -6,7 +6,7 @@ var password=prompt('введите пароль');
 if(password==admin_password){
 var admin_play=true;
 while(admin_play==true){
-var msg=prompt('введите запрос');var n;
+var msg=prompt('введите запрос \n защита\n жизни\n максимум жизней\n опыт\n уровень\n деньги\n карта\n вещь1\n вещь2\n стоп');var n;
 if(msg=='защита'){n=prompt('введите количество');def=+n+def;}
 if(msg=='жизни'){n=prompt('введите количество');php=+n+php;}
 if(msg=='максимум жизней'){n=prompt('введите количество');pmhp=+n+pmhp;}
@@ -14,7 +14,7 @@ if(msg=='опыт'){n=prompt('введите количество');xp=+n+xp;}
 if(msg=='уровень'){n=prompt('введите количество');lvl=+n+lvl;}
 if(msg=='деньги'){n=prompt('введите количество');gold=+n+gold;}
 if(msg=='карта'){n=prompt('введите количество');maplvl=n;}
-if(msg=='вещь1'){n=prompt('введите количество');
+if(msg=='вещь1'){n=prompt('от 1 до 200');
 var for_on=false;
 for(i=1;item_slot.length>i;i++){
 if(item_slot[i]==0){
@@ -22,7 +22,7 @@ for_on=true;item_slot[i]=inventory[n];
 i=item_slot.length;newdata();}}
 if(for_on==false){alert('нет места в инвентаре')}}
 
-if(msg=='вещь2'){var for_on=false;n=prompt('введите количество');
+if(msg=='вещь2'){var for_on=false;n=prompt('от 201 до 400');
 for(i=1;item_slot.length>i;i++){
 if((for_on==false)&&(item_slot[i]!=0)){
 if(item_slot[i][0]==n){

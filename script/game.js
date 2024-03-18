@@ -18,49 +18,22 @@ var colTileCount = ground[0].length;/* Количество плиток в каждом столбце фона*/
 var imageNumTiles = 15;  /* Количество плиток в каждом ряду тайлсета*/
 
 
-function drawImage () 
-{
-	canvas.height = ground.length*tileSize;
-	canvas.width  = ground[0].length*tileSize;
-	var rowTileCount = ground.length;/* Количество плиток в каждом ряду фона*/
-	var colTileCount = ground[0].length;/* Количество плиток в каждом столбце фона*/
-	var imageNumTiles = 15;  /* Количество плиток в каждом ряду тайлсета*/
-	for (var r = 0; r < rowTileCount; r++) 
-	{
-		for (var c = 0; c < colTileCount; c++) 
-		{
-			var tile = ground[ r ][ c ];
-			var tileRow = (tile / imageNumTiles) | 0; // Операция "побитовое ИЛИ"
-			var tileCol = (tile % imageNumTiles) | 0;
-			ctx.drawImage
-			(
-				tilesetImage, 
-				(tileCol * tileSize), 
-				(tileRow * tileSize), 
-				tileSize, tileSize, 
-				(c * tileSize), 
-				(r * tileSize), 
-				tileSize, 
-				tileSize
-			);
-			tile =layer1[ r ][ c ]; 
-			tileRow = (tile / imageNumTiles) | 0; 
-			tileCol = (tile % imageNumTiles) | 0; 
-			ctx.drawImage
-			(
-				tilesetImage, 
-				(tileCol * tileSize), 
-				(tileRow * tileSize), 
-				tileSize, 
-				tileSize, 
-				(c * tileSize), 
-				(r * tileSize), 
-				tileSize, 
-				tileSize
-			); 
-		}
-	} 
-} 
+function drawImage () {
+canvas.height = ground.length*tileSize;
+canvas.width  = ground[0].length*tileSize;
+var rowTileCount = ground.length;/* Количество плиток в каждом ряду фона*/
+var colTileCount = ground[0].length;/* Количество плиток в каждом столбце фона*/
+var imageNumTiles = 15;  /* Количество плиток в каждом ряду тайлсета*/
+ for (var r = 0; r < rowTileCount; r++) {for (var c = 0; c < colTileCount; c++) {
+var tile = ground[ r ][ c ];
+var tileRow = (tile / imageNumTiles) | 0; // Операция "побитовое ИЛИ"
+var tileCol = (tile % imageNumTiles) | 0;
+ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize);
+tile =layer1[ r ][ c ]; 
+tileRow = (tile / imageNumTiles) | 0; 
+tileCol = (tile % imageNumTiles) | 0; 
+ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize); 
+   }} } 
 
 function newdata(){
 if(99<xp){pmhp+=10;xp-=100;lvl++;gold+=5*lvl;php=pmhp;}
