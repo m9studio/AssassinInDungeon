@@ -10,48 +10,75 @@ var ctx = canvas.getContext('2d');
 
 var tileSize = 26*1;/* Размер плитки (26*26)*/
 
-canvas.height = ground.length*tileSize;
-canvas.width  = ground[0].length*tileSize;
+canvas.height = 15*tileSize;
+canvas.width  = 15*tileSize;
 
-var rowTileCount = ground.length;/* Количество плиток в каждом ряду фона*/
-var colTileCount = ground[0].length;/* Количество плиток в каждом столбце фона*/
+var rowTileCount = 15;/* Количество плиток в каждом ряду фона*/
+var colTileCount = 15;/* Количество плиток в каждом столбце фона*/
 var imageNumTiles = 15;  /* Количество плиток в каждом ряду тайлсета*/
 
 
 function drawImage () {
-canvas.height = ground.length*tileSize;
-canvas.width  = ground[0].length*tileSize;
-var rowTileCount = ground.length;/* Количество плиток в каждом ряду фона*/
-var colTileCount = ground[0].length;/* Количество плиток в каждом столбце фона*/
-var imageNumTiles = 15;  /* Количество плиток в каждом ряду тайлсета*/
+if((195+(player_skin*15))>layer1[py][px]){layer1[py][px]+=4;}
+var r1=0; var c1=0;
+if((px>7)&&(px<(ground[0].length-7))){c1=px-7;}else if(px>(ground[0].length-8)){c1=(ground[0].length-15);}
+if((py>7)&&(py<(ground.length-7))){r1=py-7;}else if(py>(ground.length-8)){r1=(ground.length-15);}
  for (var r = 0; r < rowTileCount; r++) {for (var c = 0; c < colTileCount; c++) {
-var tile = ground[ r ][ c ];
+var tile = ground[ r+r1 ][ c+c1 ];
 var tileRow = (tile / imageNumTiles) | 0; // Операция "побитовое ИЛИ"
 var tileCol = (tile % imageNumTiles) | 0;
 ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize);
-tile =layer1[ r ][ c ]; 
+tile =layer1[ r+r1 ][ c+c1 ]; 
 tileRow = (tile / imageNumTiles) | 0; 
 tileCol = (tile % imageNumTiles) | 0; 
 ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize); 
-   }} } 
+
+
+tile =Math.floor((layer2[ r+r1 ][ c+c1 ]/layer3[ r+r1 ][ c+c1 ])*10); 
+tile+=285;
+tileRow = (tile / imageNumTiles) | 0; 
+tileCol = (tile % imageNumTiles) | 0; 
+ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize); 
+   }} }
+
+
+
+
+
+
+
+
+
+
+
+
 
 function newdata(){
-if(99<xp){pmhp+=10;xp-=100;lvl++;gold+=5*lvl;php=pmhp;}
+if((100*lvl-1)<xp){pmhp+=10;xp-=100;lvl++;gold+=5*lvl;php=pmhp;}
 hp1.innerHTML=php+'/'+pmhp;
 def1.innerHTML=def/10;
 lvl1.innerHTML=lvl;
 document.getElementById('lvl1').title=xp+'/'+100;
 gold1.innerHTML=gold;
 
-if(armor_slot[1]!=0){armor1.src='items/'+armor_slot[1][6];armor1.title=armor_slot[1][2]+' def: '+armor_slot[1][5];
+for(i=1;item_slot.length>i;i++){if(item_slot[i]!=0){
+if(item_slot[i][1]=='crystal'){
+if(item_slot[i][3]<1){item_slot.splice(i,1);item_slot[15]=0;}
+item_slot[i][2]=' x'+item_slot[i][3];}
+}}
+
+if(sword_slot[1]!=0){sword1.src='items/'+sword_slot[1][6];sword1.title=sword_slot[1][2]+' atk: '+(sword_slot[1][5]/10);
+}else{sword1.src='items/6.png';sword1.title="пусто";}
+
+if(armor_slot[1]!=0){armor1.src='items/'+armor_slot[1][6];armor1.title=armor_slot[1][2]+' def: '+(armor_slot[1][5]/10);
 }else{armor1.src='items/1.png';armor1.title="пусто";}
-if(armor_slot[2]!=0){armor2.src='items/'+armor_slot[2][6];armor2.title=armor_slot[2][2]+' def: '+armor_slot[2][5];
+if(armor_slot[2]!=0){armor2.src='items/'+armor_slot[2][6];armor2.title=armor_slot[2][2]+' def: '+(armor_slot[2][5]/10);
 }else{armor2.src='items/2.png';armor2.title="пусто";}
-if(armor_slot[3]!=0){armor3.src='items/'+armor_slot[3][6];armor3.title=armor_slot[3][2]+' def: '+armor_slot[3][5];
+if(armor_slot[3]!=0){armor3.src='items/'+armor_slot[3][6];armor3.title=armor_slot[3][2]+' def: '+(armor_slot[3][5]/10);
 }else{armor3.src='items/3.png';armor3.title="пусто";}
-if(armor_slot[4]!=0){armor4.src='items/'+armor_slot[4][6];armor4.title=armor_slot[4][2]+' def: '+armor_slot[4][5];
+if(armor_slot[4]!=0){armor4.src='items/'+armor_slot[4][6];armor4.title=armor_slot[4][2]+' def: '+(armor_slot[4][5]/10);
 }else{armor4.src='items/4.png';armor4.title="пусто";}
-if(armor_slot[5]!=0){armor5.src='items/'+armor_slot[5][6];armor5.title=armor_slot[5][2]+' def: '+armor_slot[5][5];
+if(armor_slot[5]!=0){armor5.src='items/'+armor_slot[5][6];armor5.title=armor_slot[5][2]+' def: '+(armor_slot[5][5]/10);
 }else{armor5.src='items/5.png';armor5.title="пусто";}
 
 if(item_slot[1]!=0){item1.src='items/'+item_slot[1][6];item1.title=item_slot[1][2];
@@ -95,9 +122,21 @@ if(item_slot[15]!=0){item15.src='items/'+item_slot[15][6];item15.title=item_slot
 
 
 
-function playerhp(){php-=Math.floor(1000/def);newdata();}
-function bothp(y,x){layer1[y][x]=0;drawImage();botn--;gold++;xp+=3;newdata();
-var b=Math.floor(Math.random()*100)+1;var n=0;
+function playerhp1(){php-=Math.floor(250/def);newdata();}
+function playerhp2(){php-=Math.floor(300/def);newdata();}
+
+function door_map(){
+if((map_class=='war')&&(botn1==0)&&(botn2==0)){layer1[dy][dx]=0;drawImage();}
+}
+
+function bothp1(y,x){layer2[y][x]-=atk;drawImage();
+if(layer2[y][x]<1){layer2[y][x]=0;layer3[y][x]=0;
+layer1[y][x]=0;drawImage();botn1--;gold++;xp+=3;newdata();
+door_map();
+
+
+
+/*var b=Math.floor(Math.random()*100)+1;var n=0;
 if((0<b)&&(b<2)){n=101;}if((1<b)&&(b<3)){n=102;}if((2<b)&&(b<4)){n=103;}if((3<b)&&(b<5)){n=104;}if((4<b)&&(b<6)){n=105;}
 if((5<b)&&(b<41)){n=201;}if((40<b)&&(b<101)){n=211;}
 if(n<201){
@@ -115,30 +154,178 @@ i=item_slot.length;}}
 if((for_on==false)&&(item_slot[i]==0)){
 item_slot[i]=inventory[n];
 for_on=true;
-i=item_slot.length;}}
-}
+i=item_slot.length;}}}*/
 
-}
+
+}}
+
+
+
+function bothp2(y,x){layer2[y][x]-=atk;
+if(layer2[y][x]<1){
+layer1[y][x]=0;drawImage();botn2--;gold++;xp+=3;newdata();}}
+
+
+
+
+
+
+
+
+
+
+
+var player_stop_run=0;
+var player_stop_atack=0;
+var player_time1=-1;
+var player_time2=false;
+
+function new_map_war(){
+if(ground[py][px]==207){
+
+if(map_class=='peaceful'){map_class='war';new_map();}else
+if(map_class=='war'){maplvl++;new_map();}
+
+}}
 
 document.onkeyup = function checkKeycode(event){
     var keycode;
     if(!event) var event = window.event;
-   keycode = event.which; 
-if(keycode==37||keycode==65){if(layer1[py][px-1]==0){layer1[py][px]=0;px-=1;}layer1[py][px]=8}
-if(keycode==38||keycode==87){if(layer1[py-1][px]==0){layer1[py][px]=0;py-=1;
+   keycode = event.which;
+
+clearInterval(player_time1);
+player_time2=false;
+
+if((player_stop_atack==0)&&(map_class!='peaceful')){if(keycode==32){
+if(((layer1[py][px-1]>22)&&(layer1[py][px-1]<27))&&(layer1[py][px]==195+(player_skin*15))){bothp1(py,px-1)}
+if(((layer1[py][px+1]>22)&&(layer1[py][px+1]<27))&&(layer1[py][px]==197+(player_skin*15))){bothp1(py,px+1)}
+if(((layer1[py-1][px]>22)&&(layer1[py-1][px]<27))&&(layer1[py][px]==196+(player_skin*15))){bothp1(py-1,px)}
+if(((layer1[py+1][px]>22)&&(layer1[py+1][px]<27))&&(layer1[py][px]==198+(player_skin*15))){bothp1(py+1,px)}
+layer1[py][px]+=4;drawImage();
+setTimeout("layer1[py][px]-=4;drawImage();", 150);
+
+player_stop_atack=500;
+}}
+}
+
+
+
+
+
+
+document.onkeydown = function checkKeycode(event){
+    var keycode;
+    if(!event) var event = window.event;
+   keycode = event.which;
+if(player_time2==false){player_time2=true;
+// player_timing2();
+player_time1=setInterval(function(){
+if(player_stop_run==0){
+if(keycode==37||keycode==65){if(layer1[py][px-1]==0){layer1[py][px]=0;px-=1;}if(player_class=='creator'){layer1[py][px]=128;}
+
+layer1[py][px]=195+(player_skin*15);
+new_map_war();
+player_stop_run+=125;
+}
+if(keycode==38||keycode==87){var a=true;
+if(layer1[py-1][px]==0){layer1[py][px]=0;py-=1;
 }else if(layer1[py-1][px]==53){layer1[py-1][px]=54;php=pmhp;newdata();
-}else if((layer1[py-1][px]==39)&&(botn<1)){maplvl++;new_map();}
-layer1[py][px]=9;}
-if(keycode==39||keycode==68){if(layer1[py][px+1]==0){layer1[py][px]=0;px+=1;}layer1[py][px]=10}
-if(keycode==40||keycode==83){if(layer1[py+1][px]==0){layer1[py][px]=0;py+=1;}layer1[py][px]=11}
+}else if(layer1[py-1][px]==39){map_class='peaceful';new_map();a=false;}
+if(a==true){
+
+layer1[py][px]=196+(player_skin*15);
+new_map_war();
+}player_stop_run+=125;}
+if(keycode==39||keycode==68){if(layer1[py][px+1]==0){layer1[py][px]=0;px+=1;}
+
+layer1[py][px]=197+(player_skin*15);
+new_map_war();
+player_stop_run+=125;
+}
+if(keycode==40||keycode==83){if(layer1[py+1][px]==0){layer1[py][px]=0;py+=1;}
+
+layer1[py][px]=198+(player_skin*15);
+new_map_war();
+player_stop_run+=125;
+}
+
+drawImage();
+}},1);}
+
+
+}
+
+
+
+
+
+
+/*document.onkeyup = function checkKeycode(event){
+    var keycode;
+    if(!event) var event = window.event;
+   keycode = event.which; 
+
+if(player_stop==0){
+if(keycode==37||keycode==65){if(layer1[py][px-1]==0){layer1[py][px]=0;px-=1;}if(player_class=='creator'){layer1[py][px]=128;}
+if(player_class=='creator'){layer1[py][px]=128;}
+if(player_class=='player1'){layer1[py][px]=195;}
+if(player_class=='player2'){layer1[py][px]=210;}
+if(player_class=='player3'){layer1[py][px]=225;}
+if(player_class=='player4'){layer1[py][px]=240;}
+player_stop+=1;
+}
+if(keycode==38||keycode==87){var a=true;
+if(layer1[py-1][px]==0){layer1[py][px]=0;py-=1;
+}else if(layer1[py-1][px]==53){layer1[py-1][px]=54;php=pmhp;newdata();
+}else if((layer1[py-1][px]==39)&&((botn1<1)&&(botn2<1)&&(botn3<1)&&(botn4<1)&&(botn5<1)&&(botn6<1)&&(botn7<1)&&(botn8<1)&&(botn9<1)&&(botn10<1))){maplvl++;new_map();a=false;}
+if(a==true){
+if(player_class=='creator'){layer1[py][px]=129;}
+if(player_class=='player1'){layer1[py][px]=196;}
+if(player_class=='player2'){layer1[py][px]=211;}
+if(player_class=='player3'){layer1[py][px]=226;}
+if(player_class=='player4'){layer1[py][px]=241;}
+}player_stop+=1;}
+if(keycode==39||keycode==68){if(layer1[py][px+1]==0){layer1[py][px]=0;px+=1;}
+if(player_class=='creator'){layer1[py][px]=130;}
+if(player_class=='player1'){layer1[py][px]=197;}
+if(player_class=='player2'){layer1[py][px]=212;}
+if(player_class=='player3'){layer1[py][px]=227;}
+if(player_class=='player4'){layer1[py][px]=242;}
+player_stop+=1;
+}
+if(keycode==40||keycode==83){if(layer1[py+1][px]==0){layer1[py][px]=0;py+=1;}
+if(player_class=='creator'){layer1[py][px]=131;}
+if(player_class=='player1'){layer1[py][px]=198;}
+if(player_class=='player2'){layer1[py][px]=213;}
+if(player_class=='player3'){layer1[py][px]=228;}
+if(player_class=='player4'){layer1[py][px]=243;}
+player_stop+=1;
+}
 if(keycode==32){
-if(((layer1[py][px-1]>22)&&(layer1[py][px-1]<27))&&(layer1[py][px]==8)){bothp(py,px-1)}
-if(((layer1[py][px+1]>22)&&(layer1[py][px+1]<27))&&(layer1[py][px]==10)){bothp(py,px+1)}
-if(((layer1[py-1][px]>22)&&(layer1[py-1][px]<27))&&(layer1[py][px]==9)){bothp(py-1,px)}
-if(((layer1[py+1][px]>22)&&(layer1[py+1][px]<27))&&(layer1[py][px]==11)){bothp(py+1,px)}
+//player_stop+=1;
+if(((layer1[py][px-1]>22)&&(layer1[py][px-1]<27))&&(layer1[py][px]==195)){bothp1(py,px-1)}
+if(((layer1[py][px+1]>22)&&(layer1[py][px+1]<27))&&(layer1[py][px]==197)){bothp1(py,px+1)}
+if(((layer1[py-1][px]>22)&&(layer1[py-1][px]<27))&&(layer1[py][px]==196)){bothp1(py-1,px)}
+if(((layer1[py+1][px]>22)&&(layer1[py+1][px]<27))&&(layer1[py][px]==198)){bothp1(py+1,px)}
+
+if(((layer1[py][px-1]>82)&&(layer1[py][px-1]<87))&&(layer1[py][px]==8)){bothp2(py,px-1)}
+if(((layer1[py][px+1]>82)&&(layer1[py][px+1]<87))&&(layer1[py][px]==10)){bothp2(py,px+1)}
+if(((layer1[py-1][px]>82)&&(layer1[py-1][px]<87))&&(layer1[py][px]==9)){bothp2(py-1,px)}
+if(((layer1[py+1][px]>82)&&(layer1[py+1][px]<87))&&(layer1[py][px]==11)){bothp2(py+1,px)}
 }
 drawImage();
-}
+}}*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 function items(){

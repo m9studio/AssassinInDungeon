@@ -1,9 +1,9 @@
 function command(){
 var admin_password='AD11mina654';
-var msg=prompt('введите запрос');
+/*var msg=prompt('введите запрос');
 if(msg=='права администратора'){
 var password=prompt('введите пароль');
-if(password==admin_password){
+if(password==admin_password){*/
 var admin_play=true;
 while(admin_play==true){
 var msg=prompt('введите запрос \n защита\n жизни\n максимум жизней\n опыт\n уровень\n деньги\n карта\n вещь1\n вещь2\n стоп');var n;
@@ -38,8 +38,8 @@ if(for_on==false){alert('нет места в инвентаре')}}
 
 if(msg=='стоп'){admin_play=false;}
 }new_map();newdata();
-}else{alert('попытка взлома');window.location.reload()}
-}
+/*}else{alert('попытка взлома');window.location.reload()}
+}*/
 
 
 }
