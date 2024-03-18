@@ -115,6 +115,9 @@ if(item_slot3[2]!=null){item3_2.style=inventory[item_slot3[2][0]][6];item3_2.tit
 }else{item3_2.style='width:40px; height:40px; background:url(img/items.png);';item3_2.title="пусто";}
 
 
+
+
+//save_on(2);
 }
 
 

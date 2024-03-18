@@ -1,7 +1,14 @@
 
-function load_off(text){
+function load_off(){
 load_div.style.display="none";null_div.style.display="block";
-if(text!=''){load_on(text)}
+/*if(text!=''){load_on(text)}
+quest_open(0)
+}*/
+
+if(localStorage.getItem('aid')!=null){
+text=localStorage.getItem('aid');
+load_on(text)
+}
 quest_open(0)
 }
 
@@ -160,8 +167,8 @@ json_data_on.innerHTML=str;
 json_data.value=str;
 */
 
-json_data_1.value=str;
-
+//json_data_1.value=str;
+localStorage.setItem('aid',str);
 
 }
 

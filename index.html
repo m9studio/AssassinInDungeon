@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 <title>assassin in dungeon</title>
 <meta charset=utf-8">
@@ -26,15 +26,15 @@ font-family: sao_font;}
 <link href='style/shop_map.css' type="text/css" rel="stylesheet">
 <body>
 
-<div class='load_div' id='load_div'>
-<input id='json_data_2' style='position:absolute;left:20;top:10;width:250;'>
+<div class='load_div' id='load_div' style='display:none'>
+<!--<input id='json_data_2' style='position:absolute;left:20;top:10;width:250;'>-->
 <div align="center" style='font-size:25px;position:absolute;left:20;top:40;width:250;'>если у вас есть данные которые вы выгрузили и сохранили, то вставьте их сюда и нажмите продолжить</div>
-<span class='load_btn' align="center" style='top:200' onclick='load_off(json_data_2.value)'>продолжить</span>
-<span class='load_btn' align="center" style='top:250' onclick='load_off("")'>новая игра</span>
+<span class='load_btn' align="center" style='top:200' onclick='load_off()'>продолжить</span>
+<span class='load_btn' align="center" style='top:250' onclick='load_off()'>новая игра</span>
 </div>
 
 
-<div id='null_div' style='display:none'>
+<div id='null_div' style='display:block'>
 
 <div class='music_game'>
 
@@ -162,7 +162,7 @@ onmouseout="this.style.backgroundColor='blue'"align="center"><div style='positio
 <span onclick='menuon1()' align="center" class='menubtn1'>продолжить</span>
 <span onclick='menuon2()' align="center" class='menubtn2'>магазин</span>
 <span onclick='menuon3()' align="center" class='menubtn3'>как играть?</span>
-<span onclick='menuon4()' align="center" class='menubtn4'>сохранить</span>
+<!--<span onclick='menuon4()' align="center" class='menubtn4'>сохранить</span>-->
 </div>
 </div>
 
@@ -209,10 +209,10 @@ W A S D-клавиши перемещения<br>пробел-атака
 </div>
 
 <div class='save_div' id='save_div' style='display:none'>
-<input id='json_data_1' style='position:absolute;left:20;top:10;width:250;'>
+<!--<input id='json_data_1' style='position:absolute;left:20;top:10;width:250;'>-->
 <div align="center" style='font-size:25px;position:absolute;left:20;top:40;width:250;'>скопируйте данные и сохраните данные</div>
-<span class='save_btn' align="center" style='top:100' onclick='save_on(0)'>получить данные #1</span>
-<span class='save_btn' align="center" style='top:150' onclick='save_on(1)'>получить данные #2</span>
+<!--<span class='save_btn' align="center" style='top:100' onclick='save_on(0)'>получить данные #1</span>
+<span class='save_btn' align="center" style='top:150' onclick='save_on(1)'>получить данные #2</span>-->
 <span class='save_btn' align="center" style='top:200' onclick='save_on(2)'>получить данные #3</span>
 <span class='save_btn' align="center" style='top:250' onclick='shopon3()'>назад</span>
 </div>
@@ -276,12 +276,31 @@ onmouseout="this.style.backgroundColor='blue'"align="center">продолжит�
 </div>
 
 
+<!--<div style='font-size:18px;border: solid 2px black;position:absolute;top:220;left:420;width:400;height:250;'>
 
+<audio id="c_m" loop controls></audio>
+<br>
+<button onclick='c_m.src="mina987/sao1.mp3";music_game.volume=0;c_m.play();'>sao 1</button>
+<button onclick='c_m.src="mina987/sao2.mp3";music_game.volume=0;c_m.play();'>sao 2</button>
+<button onclick='c_m.src="mina987/sao5.mp3";music_game.volume=0;c_m.play();'>sao 5</button>
 
+<button onclick='c_m.src="mina987/ov1.mp3";music_game.volume=0;c_m.play();'>ov 1</button>
+<button onclick='c_m.src="mina987/ov2.mp3";music_game.volume=0;c_m.play();'>ov 2</button>
+<button onclick='c_m.src="mina987/ov3.mp3";music_game.volume=0;c_m.play();'>ov 3</button>
+
+<button onclick='c_m.src="mina987/tg1.mp3";music_game.volume=0;c_m.play();'>tg 1</button>
+<button onclick='c_m.src="mina987/tg3.mp3";music_game.volume=0;c_m.play();'>tg 3</button>
+<br>
+<input id="c_c" style='width:250;'>
+<button onclick='eval(c_c.value);c_c.value="";'>пуск</button>
+
+</div>-->
 
 
 </body>
 
+<script src="script/load_save.js">
+</script>
 <script src="user/0.js">
 </script>
 <script src="script/item.js">
@@ -296,11 +315,11 @@ onmouseout="this.style.backgroundColor='blue'"align="center">продолжит�
 </script>
 <script src="script/map.js">
 </script>
-<script src="script/game.js">
-</script>
 <script src="script/button.js">
 </script>
 <script src="script/bot.js">
+</script>
+<script src="script/game.js">
 </script>
 <script src="script/time.js">
 </script>
@@ -311,8 +330,6 @@ onmouseout="this.style.backgroundColor='blue'"align="center">продолжит�
 <script src="script/music.js">
 </script>
 <script src="script/home.js">
-</script>
-<script src="script/load_save.js">
 </script>
 <script src="script/alert.js">
 </script>
@@ -347,5 +364,6 @@ onmouseout="this.style.backgroundColor='blue'"align="center">продолжит�
 
 <script>
 shop_img();
+load_off();
 </script>
 </html>

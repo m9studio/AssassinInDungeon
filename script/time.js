@@ -50,6 +50,8 @@ if((animation1%200==0)&&(botx[10]!=null)){bot_ai(13,10);}
 
 if(player_stop_run>0){player_stop_run--}if(player_stop_atack>0){player_stop_atack--}
 
+
+save_on(2);
 },1);
 
 
