@@ -1,28 +1,28 @@
 function command(){
 var admin_password='AD11mina654';
-/*var msg=prompt('введите запрос');
-if(msg=='права администратора'){
-var password=prompt('введите пароль');
+/*var msg=prompt('РІРІРµРґРёС‚Рµ Р·Р°РїСЂРѕСЃ');
+if(msg=='РїСЂР°РІР° Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°'){
+var password=prompt('РІРІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ');
 if(password==admin_password){*/
 var admin_play=true;
 while(admin_play==true){
-var msg=prompt('введите запрос \n защита\n жизни\n максимум жизней\n опыт\n уровень\n деньги\n карта\n вещь1\n вещь2\n стоп');var n;
-if(msg=='защита'){n=prompt('введите количество');def=+n+def;}
-if(msg=='жизни'){n=prompt('введите количество');php=+n+php;}
-if(msg=='максимум жизней'){n=prompt('введите количество');pmhp=+n+pmhp;}
-if(msg=='опыт'){n=prompt('введите количество');xp=+n+xp;}
-if(msg=='уровень'){n=prompt('введите количество');lvl=+n+lvl;}
-if(msg=='деньги'){n=prompt('введите количество');gold=+n+gold;}
-if(msg=='карта'){n=prompt('введите количество');maplvl=n;}
-if(msg=='вещь1'){n=prompt('от 1 до 200');
+var msg=prompt('РІРІРµРґРёС‚Рµ Р·Р°РїСЂРѕСЃ \n Р·Р°С‰РёС‚Р°\n Р¶РёР·РЅРё\n РјР°РєСЃРёРјСѓРј Р¶РёР·РЅРµР№\n РѕРїС‹С‚\n СѓСЂРѕРІРµРЅСЊ\n РґРµРЅСЊРіРё\n РєР°СЂС‚Р°\n РІРµС‰СЊ1\n РІРµС‰СЊ2\n СЃС‚РѕРї');var n;
+if(msg=='Р·Р°С‰РёС‚Р°'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');def=+n+def;}
+if(msg=='Р¶РёР·РЅРё'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');php=+n+php;}
+if(msg=='РјР°РєСЃРёРјСѓРј Р¶РёР·РЅРµР№'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');pmhp=+n+pmhp;}
+if(msg=='РѕРїС‹С‚'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');xp=+n+xp;}
+if(msg=='СѓСЂРѕРІРµРЅСЊ'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');lvl=+n+lvl;}
+if(msg=='РґРµРЅСЊРіРё'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');gold=+n+gold;}
+if(msg=='РєР°СЂС‚Р°'){n=prompt('РІРІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ');maplvl=n;}
+if(msg=='РІРµС‰СЊ1'){n=prompt('РѕС‚ 1 РґРѕ 200');
 var for_on=false;
 for(i=1;item_slot.length>i;i++){
 if(item_slot[i]==0){
 for_on=true;item_slot[i]=inventory[n];
 i=item_slot.length;newdata();}}
-if(for_on==false){alert('нет места в инвентаре')}}
+if(for_on==false){alert('РЅРµС‚ РјРµСЃС‚Р° РІ РёРЅРІРµРЅС‚Р°СЂРµ')}}
 
-if(msg=='вещь2'){var for_on=false;n=prompt('от 201 до 400');
+if(msg=='РІРµС‰СЊ2'){var for_on=false;n=prompt('РѕС‚ 201 РґРѕ 400');
 for(i=1;item_slot.length>i;i++){
 if((for_on==false)&&(item_slot[i]!=0)){
 if(item_slot[i][0]==n){
@@ -33,12 +33,12 @@ if((for_on==false)&&(item_slot[i]==0)){
 item_slot[i]=inventory[n];
 for_on=true;
 i=item_slot.length;}}
-if(for_on==false){alert('нет места в инвентаре')}}
+if(for_on==false){alert('РЅРµС‚ РјРµСЃС‚Р° РІ РёРЅРІРµРЅС‚Р°СЂРµ')}}
 
 
-if(msg=='стоп'){admin_play=false;}
+if(msg=='СЃС‚РѕРї'){admin_play=false;}
 }new_map();newdata();
-/*}else{alert('попытка взлома');window.location.reload()}
+/*}else{alert('РїРѕРїС‹С‚РєР° РІР·Р»РѕРјР°');window.location.reload()}
 }*/
 
 

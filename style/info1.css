@@ -1,0 +1,33 @@
+
+.info1_0{position:absolute;
+border: solid 2px black;
+top:60px;
+background:while;
+width:250px;
+height:300px;
+}
+.info1_1{
+position:absolute;
+font-size:20px;
+width:250px;
+}
+.info1_2{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:190px;left:30px;}
+.info1_2:hover{background:red;}
+.info1_3{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:250px;left:30px;}
+.info1_3:hover{background:red;}

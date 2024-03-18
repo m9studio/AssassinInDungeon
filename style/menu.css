@@ -1,0 +1,53 @@
+
+
+.menu{
+border: solid 2px black;
+top:60px;
+background:while;
+width:250px;
+height:280px;
+}
+.menubtn1{position:absolute;
+font-size:32px;
+color:fff;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:20px;left:30px;}
+.menubtn1:hover{background:red;}
+.menubtn2{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:90px;left:30px;}
+.menubtn2:hover{background:red;}
+.menubtn3{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:160px;left:30px;}
+.menubtn3:hover{background:red;}
+.menubtn4{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:230px;left:30px;}
+.menubtn4:hover{background:red;}
+
+
+
+

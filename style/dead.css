@@ -1,0 +1,24 @@
+
+.dead{position:absolute;
+border: solid 2px black;
+top:150px;
+background:while;
+width:250px;
+height:110px;
+}
+.dead1{
+position:absolute;
+font-size:32px;
+width:250px;
+}
+.dead2{position:absolute;
+color:fff;
+font-size:32px;
+background:blue;
+width:200px;
+height:40px;
+border-radius: 10px;
+border: solid 2px black;
+top:60px;left:30px;}
+.dead2:hover{background:red;}
+
